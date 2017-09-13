@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>greeting</title>
+	<title></title>
 </head>
 
 <body>
 
-<div> Hello, I am Audunn. </div>
+<div>this is greeting number {{$id}} with {{$count}} replies</div>
 
 </body>
 </html>
