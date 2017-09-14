@@ -7,18 +7,20 @@ use Illuminate\Http\Request;
 class ThreadsController extends Controller
 {
     public function index(){
-		$message = "This is the Threads index view.";
-		return $message;
+
+		return view('threads.index');
+
 	}
 
 	public function create(){
-		$message = "This is the Threads create view.";
-		return $message;
+		return view('threads.create');
 	}
 
 	public function show($id){
-		$message = "This is the thread with id " . $id;
-		return $message;
+
+		
+
+		return view('threads.show');
 	}
 
 }
