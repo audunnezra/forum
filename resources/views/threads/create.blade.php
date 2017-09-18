@@ -15,6 +15,13 @@
                         <label id="thread-body">Body : </label>
                         <br></br>
                         <textarea rows="6" cols="99" placeholder="Write something here. . ."></textarea>
+                        @foreach($countries as $name)
+                            @if($name == "Irland")
+                            <p>{{$name}}</p>
+                            @else
+                            <h1>{{$name}}</h1>
+                            @endif
+                        @endforeach
                     </div>
                 </div>
             </div>
