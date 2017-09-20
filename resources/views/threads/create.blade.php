@@ -15,13 +15,23 @@
                         <label id="thread-body">Body : </label>
                         <br></br>
                         <textarea rows="6" cols="99" placeholder="Write something here. . ."></textarea>
-                        @foreach($countries as $name)
-                            @if($name == "Irland")
-                            <p>{{$name}}</p>
-                            @else
-                            <h1>{{$name}}</h1>
-                            @endif
-                        @endforeach
+                        <ul>
+                            @foreach($tasks as $task)
+                                @if( ! $task['complete'])
+                                    <a href= "{{$task['anchor']}}">
+                                        <li>
+                                            {{$task['title']}}
+                                        </li>
+                                    </a>
+                                @else
+                                    <a href= "{{$task['anchor']}}">
+                                        <li>
+                                            <del>{{$task['title']}}</del>
+                                        </li>
+                                    </a>
+                                @endif
+                            @endforeach
+                        </ul>
                     </div>
                 </div>
             </div>

@@ -15,9 +15,15 @@ class ThreadsController extends Controller
 	}
 
 	public function create(){
-		$countries = ['Island','Island','Irland','Island','Irland'];
+		$tasks = [
+			['title' => "vakna", 'complete' => true, 'anchor' => 'https://www.rumfatalagerinn.is/'],
+			['title' => "borda", 'complete' => true, 'anchor' => 'https://www.dominos.is/'],
+			['title' => "versla", 'complete' => false, 'anchor' => 'https://www.bonus.is'],
+			['title' => "heimavinna", 'complete' => false, 'anchor' => ' k.fss.is'],
+			['title' => "sofa", 'complete' => false, 'anchor' => 'https://www.byko.is']
+		];
 
-		return view('threads.create', compact('countries'));
+		return view('threads.create', compact('tasks'));
 	}
 
 	public function show($id){
