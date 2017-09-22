@@ -9,4 +9,4 @@ Route::get('/threads/create', 'ThreadsController@create');
 
 Route::get('/threads/{id}', 'ThreadsController@show');
 
-Route::get('/profile/{user_id}', 'threadsController@profile');
+Route::get('/profile/{user_id}', 'ProfileController@show');

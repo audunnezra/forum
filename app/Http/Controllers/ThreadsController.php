@@ -33,11 +33,4 @@ class ThreadsController extends Controller
 		return view('threads.show', compact('thread'));
 	}
 
-	public function profile($user_id){
-
-		$threads = DB::select('select * from threads where user_id=?', [$user_id]);
-		
-		return view('profile', compact('threads'));
-	}
-
 }

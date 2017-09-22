@@ -36,7 +36,9 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;
+                        <li><a href="{{ url('threads') }}">Threads</a></li>
+                        <li><a href="{{ url('threads/create') }}">New Thread</a></li>
+                    <!--    <li><a href="{{ url('Profile') }}">Profile</a></li>  -->
                     </ul>
 
                     <!-- Right Side Of Navbar -->

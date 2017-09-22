@@ -1,20 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Profile</title>
-</head>
-<body>
-
-	<nav class="navbar navbar-default">
-  		<div class="container-fluid">
-  		<p>a</p>
-    	<div class="navbar-header">
-    	<p>b</p>
-    	</div>
-  		</div>
-</nav>
+@extends('layouts.app')
 
 
-</body>
-</html>
+@section('content')
+<div class="container">
+	<div class="row">
+		<div class="panel panel-default">
+		  <div class="panel-heading">Panel heading without title</div>
+		  <div class="panel-body">
+		    Panel content
+		  </div>
+		</div>
+	</div>
+</div>
+@endsection
