@@ -5,35 +5,41 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Create a new thread</div>
+                <div class="panel-heading">Forum Threads</div>
+
                 <div class="panel-body">
-                    <div class="form-group">
-                        <label for="title">Title : </label>
-                        <br></br>
-                        <input id="thread-title">
-                        <br></br>
-                        <label id="thread-body">Body : </label>
-                        <br></br>
-                        <textarea rows="6" cols="99" placeholder="Write something here. . ."></textarea>
-                        <ul>
-                            @foreach($tasks as $task)
-                                @if( ! $task['complete'])
-                                    <a href= "{{$task['anchor']}}">
-                                        <li>
-                                            {{$task['title']}}
-                                        </li>
-                                    </a>
-                                @else
-                                    <a href= "{{$task['anchor']}}">
-                                        <li>
-                                            <del>{{$task['title']}}</del>
-                                        </li>
-                                    </a>
-                                @endif
-                            @endforeach
-                        </ul>
-                    </div>
+                    <form method='POST' action='/threads'>
+                        {{ csrf_field() }}
+                        <div class="form-group">
+                            <label>Title: </label>
+                            <input type="text" name="title" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Body: </label>
+                            <textarea type="text" name="title" class="form-control" rows="8"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary">Publish</button>
+                        </div>
+                    </form>
                 </div>
+                
+                <ul>
+                    @foreach($tasks as $task)
+                        @if( ! $task['complete'] )
+                            <li>
+                                <a href="{{ $task['anchor'] }}">{{ $task['title'] }}</a>
+                            </li>
+                        @else
+                            <li>
+                                <a href="{{ $task['anchor'] }}">
+                                    <s>{{ $task['title'] }}</s>
+                                </a>
+                            </li>
+                        @endif
+                    @endforeach
+                </ul>
+
             </div>
         </div>
     </div>
