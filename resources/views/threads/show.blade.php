@@ -5,10 +5,10 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">{{$thread[0]->title}}</div>
+                <div class="panel-heading">{{$thread->title}}</div>
 
                 <ul class="list-group">
-                    <li class="list-group-item"> {{$thread[0]->body}} </li>
+                    <li class="list-group-item"> {{$thread->body}} </li>
                 </ul>
             </div>
         </div>
