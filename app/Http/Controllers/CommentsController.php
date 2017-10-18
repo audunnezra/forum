@@ -3,21 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Comment;
 
 class CommentsController extends Controller
 {
-   public function store(Request $request){
+   public function store(Request $request, $thread_id){
 	
-	dd('comment');	
-	
-	}
-   	/*
-		$comment = new Comment;
-		$comment->body = $request->body;
-		$comment->user_id = Auth::id();
-		$comment->save();
+	$this->validate($request, [
+        	'body' => 'required'
+    	]);
 
-		return redirect('/threads/{thread->id}');
+	Comment::create([
+		 	'body' => $request->body,
+		 	'thread_id' => $thread_id,
+		 	'user_id' => auth()->id()
+		 ]);
+
+		return back();
+
 	}
-	*/
 }

@@ -47,7 +47,7 @@ class ThreadsController extends Controller
 		 	'title' => $request->title,
 		 	'body' => $request->body,
 		 	'user_id' => auth()->id()
-		 ])
+		 ]);
 
 		return redirect('/threads');
 	}
