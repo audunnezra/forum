@@ -38,13 +38,16 @@ class ThreadsController extends Controller
 
 	public function store(Request $request){
 		
-		
+		 $this->validate($request, [
+        	'title' => 'required|max:40',
+        	'body' => 'required'
+    	]);
 
-		$thread = new Thread;
-		$thread->title = $request->title;
-		$thread->body = $request->body;
-		$thread->user_id = Auth::id();
-		$thread->save();
+		 Thread::create([
+		 	'title' => $request->title,
+		 	'body' => $request->body,
+		 	'user_id' => auth()->id()
+		 ])
 
 		return redirect('/threads');
 	}
