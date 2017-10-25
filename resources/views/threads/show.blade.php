@@ -19,7 +19,17 @@
                 <div class="form-group">
                     <button class="btn btn-primary">Reply</button>
                 </div>
-            <form>
+            </form>
+            <br></br>
+            @foreach ($thread->comments as $comment)
+                <div class="panel panel-default">
+                    <div class="panel-heading"><h5>{{ $comment->user_id }}</h5></div>
+                    
+                    <div class="panel-body">
+                        {{$comment->body}}
+                    </div>
+                </div>
+            @endforeach
         </div>
     </div>
 </div>
